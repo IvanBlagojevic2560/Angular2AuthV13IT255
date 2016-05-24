@@ -1,3 +1,6 @@
+This is an example autentification with PHP and Angular 2 (beta). Tokens are generated through PHP and saved into MySQL database.
+<br/>
+
 The contents of <b>php</b> folder should be placed on PHP server root folder like htdocs (in XAMPP)
 or www in Apache server. <br/>
 
