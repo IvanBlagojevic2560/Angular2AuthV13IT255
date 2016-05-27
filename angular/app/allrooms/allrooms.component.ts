@@ -29,7 +29,9 @@ export class AllRoomsComponent {
 		.map(res => res.json()).share()
 		.subscribe(rooms => {
 			this.rooms = rooms.rooms; 
+			setInterval(function(){
 			$('table').DataTable();
+			},200);
 		},
 		err => {
 			 this.router.parent.navigate(['./MainPage']);

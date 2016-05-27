@@ -40,7 +40,9 @@ System.register(['angular2/core', 'angular2/common', 'angular2/http', 'rxjs/Rx',
                         .map(function (res) { return res.json(); }).share()
                         .subscribe(function (rooms) {
                         _this.rooms = rooms.rooms;
-                        $('table').DataTable();
+                        setInterval(function () {
+                            $('table').DataTable();
+                        }, 200);
                     }, function (err) {
                         _this.router.parent.navigate(['./MainPage']);
                     });
@@ -52,10 +54,9 @@ System.register(['angular2/core', 'angular2/common', 'angular2/http', 'rxjs/Rx',
                         directives: [common_1.FORM_DIRECTIVES],
                         viewBindings: [common_1.FORM_BINDINGS]
                     }), 
-                    __metadata('design:paramtypes', [(typeof (_a = typeof common_1.FormBuilder !== 'undefined' && common_1.FormBuilder) === 'function' && _a) || Object, (typeof (_b = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _b) || Object, (typeof (_c = typeof router_1.Router !== 'undefined' && router_1.Router) === 'function' && _c) || Object])
+                    __metadata('design:paramtypes', [common_1.FormBuilder, http_1.Http, router_1.Router])
                 ], AllRoomsComponent);
                 return AllRoomsComponent;
-                var _a, _b, _c;
             }());
             exports_1("AllRoomsComponent", AllRoomsComponent);
         }

@@ -17,18 +17,20 @@ export class FormComponent2 {
   http: Http;
   router: Router;
   postResponse: String;
+  select: Int = 1;
+  
   constructor(builder: FormBuilder, http: Http,  router: Router) {
 	this.http = http;
 	this.router = router;
     this.registerForm = builder.group({
      roomName: ["", Validators.none],
-     hasTV: ["", Validators.none],
+     hasTV: [this.select, Validators.none],
      beds: ["", Validators.none],
    });
   }
   
   onAddRoom(): void {
-	var data = "roomName="+this.registerForm.value.roomName+"&hasTV="+this.registerForm.value.hasTV+"&beds="+this.registerForm.value.beds;
+	var data = "roomName="+this.registerForm.value.roomName+"&hasTV="+this.select+"&beds="+this.registerForm.value.beds;
 	var headers = new Headers();
 	headers.append('Content-Type', 'application/x-www-form-urlencoded');
 	this.http.post('http://localhost/php/addroomservice.php',data, {headers:headers})

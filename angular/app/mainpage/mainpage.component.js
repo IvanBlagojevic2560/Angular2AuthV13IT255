@@ -39,10 +39,9 @@ System.register(['angular2/core', 'angular2/http', 'app/pipe/search', 'rxjs/Rx']
                         selector: 'MainPage',
                         templateUrl: 'app/mainpage/mainpage.html'
                     }), 
-                    __metadata('design:paramtypes', [(typeof (_a = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _a) || Object])
+                    __metadata('design:paramtypes', [http_1.Http])
                 ], MainPageComponent);
                 return MainPageComponent;
-                var _a;
             }());
             exports_1("MainPageComponent", MainPageComponent);
         }
